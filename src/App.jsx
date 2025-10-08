@@ -10,14 +10,15 @@ function App(){
     setSortBy(e.target.value);
   }
   let sortedNotes = notes;
+  console.log(sortBy);
   switch(sortBy) {
-    case "earliest": {
+    case "latest": {
       sortedNotes = [...notes].sort(
       (a,b) => new Date(a.createdAt) - new Date(b.createdAt)
     );
     break;
     }
-    case "latest" : {
+    case "earliset" : {
       sortedNotes = [...notes].sort(
         (a,b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
