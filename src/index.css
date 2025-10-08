@@ -1,68 +1,194 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url(./reset.css);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --bg-color: #f3f4f6;
+    --text-700: #374151;
+    --text-400: #94a3b8;
+    --text-100: #f3f4f6;
+    --text-300: #cbd5e1;
+    --white: #fff;
+    --primary-700: #4338ca;
+    --primary-600: #4f46e5;
+    --primary-100: #e0e7ff;
+    --rose-500: #f43f5e;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+html{
+    font-size: 10px;
+}
+
+body
+{
+    font-size: 1.6rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    margin-top: 4rem;
+    background-color: var(--bg-color);
+}
+
+/*
+--Header Section--
+*/
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-title{
+text-align: center;
+font-weight: 700;
+font-size: 3.5rem;
+}
+.header-sort{
+    padding: 0.7rem 1.5rem;
+    border-radius: 1.2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+.header-sort_item{
+
+}
+.header-line{
+width: 100%;
+height: 0.1rem;
+background-color: var(--text-700);
+margin-top: 3rem;
+}
+
+/*
+-- Note System --
+*/
+
+.note-system{
+    display: flex;
+    margin-top: 5rem;
+}
+.note-system_add{
+    text-align: center;
+    margin-right: 15rem;
+    margin-bottom: 11rem;
+}
+.note-system_add-title{
+font-weight: 700;
+font-size: 2.5rem;
+}
+.note-system_form{
+}
+.note-system_form-title{
+    display: block;
+    width: 35rem;
+    padding: 1.8rem;
+    border-radius: 1rem;
+    border: none;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    outline: none;
+}
+.note-system_form-title::placeholder
+{
+    font-size: 1.5rem;
+}
+.note-system_form-description{
+    display: block;
+    width: 35rem;
+    padding: 1.8rem;
+    border-radius: 1rem;
+    border: none;
+    margin-bottom: 2rem;
+    outline: none;
+}
+.note-system_form-description::placeholder
+{
+    font-size: 1.5rem;
+}
+.note-system_form-submit{
+    display: block;
+    width: 100%;
+    width: 35rem;
+    padding: 1.8rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--primary-600);
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.note-system_content{
+    width: 100%;
+    margin-bottom: 25rem;
+}
+.note-system_status-list{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.note-system_status-item{
+color: var(--text-400);
+font-size: 1.8rem;
+}
+.note-system_status-badge{
+background-color: var(--text-400);
+color: var(--text-100);
+padding: 0.3rem 0.6rem;
+border-radius: 1.5rem;
+font-size: 1.5rem;
+}
+
+/*
+
+-- Note list --
+*/
+
+.notes-list{
+    margin-top: 4rem;
+}
+.note-list_item{
+background-color: var(--white);
+padding: 1.5rem;
+border-radius: 1.5rem;
+}
+.note-list_item-title{
+font-weight: 700;
+font-size: 1.8rem;
+color: var(--text-700);
+}
+.note-list_item-info{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 1.3rem 0;
+border-bottom: 1px solid var(--primary-100);
+padding-bottom: 2rem;
+}
+.note-list_item-description{
+    color: var(--text-400);
+    font-size: 1.7rem;
+}
+.note-list_item-features{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 2.2rem;
+}
+.note-list_item-delete{
+
+}
+.note-list_item-check{
+  transform: scale(1.5);
+}
+.note-list_item-date{
+color: var(--text-300);
+font-size: 1.7rem;
 }
